@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <title>Privacy Policy Generator</title>
+  </head>
+  <body>
+    <h1>Generate Your Privacy Policy</h1>
+    <form method="POST" action="/generate">
+      <div class="form-group">
+        <label class="mt-2">Site Name:</label>
+        <input type="text" name="site_name" required />
+
+        <label class="mt-2">Contact Email:</label>
+        <input type="email" name="contact_email" required />
+      </div>
+
+      <div class="form-group">
+        <label>What personal data do you collect?</label>
+
+        <div>
+          <input type="checkbox" name="data_collected" value="Full Name" />
+          Full Name
+        </div>
+        <div>
+          <input type="checkbox" name="data_collected" value="Email Address" />
+          Email Address
+        </div>
+        <div>
+          <input type="checkbox" name="data_collected" value="Phone Number" />
+          Phone Number
+        </div>
+        <div>
+          <input type="checkbox" name="data_collected" value="Cookies" />
+          Cookies
+        </div>
+        <div>
+          <input type="checkbox" name="data_collected" value="IP Address" /> IP
+          Address
+        </div>
+        <div>
+          <input type="checkbox" name="data_collected" value="Payment Info" />
+          Payment Info
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Why do you collect this data?</label>
+        <div>
+          <input type="checkbox" name="purpose" value="Send newsletters" /> Send
+          newsletters
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="purpose"
+            value="Improve user experience"
+          />
+          Improve user experience
+        </div>
+        <div>
+          <input type="checkbox" name="purpose" value="Process payments" />
+          Process payments
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="purpose"
+            value="Analytics and performance tracking"
+          />
+          Analytics
+        </div>
+        <div>
+          <input type="checkbox" name="purpose" value="Ad personalization" /> Ad
+          personalization
+        </div>
+
+        <label>Third-party services used:</label>
+        <div>
+          <input
+            type="checkbox"
+            name="third_parties"
+            value="Google Analytics"
+          />
+          Google Analytics
+        </div>
+        <div>
+          <input type="checkbox" name="third_parties" value="Stripe" /> Stripe
+        </div>
+        <div>
+          <input type="checkbox" name="third_parties" value="Mailchimp" />
+          Mailchimp
+        </div>
+        <div>
+          <input type="checkbox" name="third_parties" value="Facebook Pixel" />
+          Facebook Pixel
+        </div>
+        <div>
+          <input
+            type="text"
+            name="other_third_parties"
+            placeholder="Other (optional)"
+          />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Do you serve users from the European Union?</label>
+        <div>
+          <select name="has_eu_users">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>How long do you keep the data?</label>
+        <div>
+          <select name="retention_period">
+            <option value="Until account deletion">
+              Until account deletion
+            </option>
+            <option value="For analytics, up to 2 years">
+              For analytics, up to 2 years
+            </option>
+            <option value="As long as legally required">
+              As long as legally required
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Data sharing policy:</label>
+        <div>
+          <select name="data_sharing">
+            <option value="We do not share personal data with third parties.">
+              We do not share personal data with third parties.
+            </option>
+            <option
+              value="We share data with trusted service providers for processing purposes."
+            >
+              Only with trusted processors
+            </option>
+            <option value="We may share data with affiliates or advertisers.">
+              With affiliates or advertisers
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Your audience includes:</label>
+        <div>
+          <select name="audience">
+            <option value="all ages">All ages</option>
+            <option value="users over 13 years old">
+              Users over 13 years old
+            </option>
+            <option value="users over 18 years old">
+              Users over 18 years old
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="submit">Generate Policy</button>
+      </div>
+    </form>
+  </body>
+</html>
